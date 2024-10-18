@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tutorific</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/login_style.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <link rel="icon" href="./images/icon/favicon.png">
+  <!-- Font Awesome Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <!-------------------------------- NAV BAR-------------------------- -->
+  <nav>
+    <input type="checkbox" id="check">
+
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <label class="logo">Tutorific</label>
+
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#about-us">About Us</a></li>
+      <li><a href="#">Login | Registration</a></li>
+
+    </ul>
+  </nav>
+    
+    <div class="containerreg" style="margin-top: 15px;">
+        <div>
+            <h2>Create an Account</h2>
+            <form id="createAccountForm">
+                <!-- Common fields -->
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email Id" >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" >
+                </div>
+
+                <div class="form-group">
+                    <label for="re-type_pass">Re-Type Password:</label>
+                    <input type="password" id="re-type_pass" name="re-type_pass" placeholder="Re-Type Password" >
+                </div>
+
+                <!-- Role selection -->
+                <div class="form-group">
+                    <label>Account Type:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="accountType" value="student" onclick="showStudentForm()"> Student</label>
+                        <label><input type="radio" name="accountType" value="staff" onclick="showStaffForm()"> Staff</label>
+                    </div>
+                </div>
+
+                <!-- Student-specific fields -->
+                <div id="studentFields" class="hidden-section">
+                    <div class="form-group">
+                        <label for="class">Class:</label>
+                        <select id="class" name="class">
+                            <option value="1st">1st year</option>
+                            <option value="2nd">2nd year</option>
+                            <option value="3rd">3rd year</option>
+                            <option value="4th">4th year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="section">Section:</label>
+                        <input type="text" id="section" name="section" placeholder="Enter section (A, B, C, etc.)">
+                    </div>
+                </div>
+
+                <!-- Staff-specific fields -->
+                <div id="staffFields" class="hidden-section">
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <input type="text" id="department" name="department" placeholder="Enter your department">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                 <div class="login-actions">
+                    <button type="submit">Create Account</button>
+
+                 </div>
+
+                <div class="login-options" >
+                    <a href="../HTML/login.html" class="forgot-password">Login ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+<!---------------------------- FOOTER ---------------------------------->
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about-us">About Us</a></li>
+            <li><a href="#">Login | Registration</a></li>
+  
+          </ul>
+        </div>    
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2024 <span class="designer">Tutorific</span></p>
+    </div>
+  </footer>
+  <!---------------------------FOOTER END -------------------------------->
+  <script src="../JS/login.js"></script>
+
+</body>
+</html>

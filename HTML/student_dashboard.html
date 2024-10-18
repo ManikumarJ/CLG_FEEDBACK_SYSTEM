@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tutorific</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/student_dashboard.css">
+
+  <link rel="icon" href="./images/icon/favicon.png">
+  <!-- Font Awesome Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#change-password">Change Password</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#history" onclick="displayFeedbackHistory()">History</a></li>
+                    <li><a href="#logout" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+
+            <section id="profile" class="content">
+                <h2>Hello <span style="color: #1A5276; padding-left: 10px;font-size: 30px;">Manikumar J</span></h2>
+                <p>Roll No : 717823Z136</p>
+            </section>
+
+            <section id="change-password" class="content">
+                <h2>Change Password</h2>
+                <form action="/change-password" method="POST">
+                    <input type="password" name="current-password" placeholder="Current Password" required>
+                    <input type="password" name="new-password" placeholder="New Password" required>
+                    <button type="submit">Change Password</button>
+                </form>
+            </section>
+
+            <section id="feedback" class="content" >
+                <h2>Feedback</h2>
+                <h3>Select Feedback Type:</h3>
+                <button onclick="showFacultyFeedback()">Faculty Feedback</button>
+                <button onclick="showCollegeFeedback()">College Feedback</button>
+            
+                <div id="faculty-feedback" style="display: none;">
+                    <h3>Faculty Feedback</h3>
+                    <form action="/submit-feedback" method="POST">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="register-number" placeholder="Register Number" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <select name="faculty" required>
+                            <option value="" disabled selected>Select Faculty</option>
+                            <option value="Ramprasath">Ramprasath</option>
+                            <option value="Senthil">Senthil</option>
+                            <option value="Athira">Athira</option>
+                            <option value="Santhini">Santhini</option>
+                        </select>
+                        
+                        <h3>Questions About Faculty</h3>
+                        <label>1. How would you describe the faculty member's teaching style?</label>
+                        <textarea name="teaching-style" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <label>2. Does the faculty member explain concepts clearly? Please provide examples.</label>
+                        <textarea name="clarity" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <label>3. How approachable is the faculty member for questions outside of class?</label>
+                        <textarea name="accessibility" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <label>4. How helpful is the feedback you receive on assignments?</label>
+                        <textarea name="feedback-helpfulness" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <label>5. Does the faculty member encourage student participation during class?</label>
+                        <textarea name="participation" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            
+                <div id="college-feedback" style="display: none;">
+                    <h3>College Feedback</h3>
+                    <form action="/submit-college-feedback" method="POST">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="register-number" placeholder="Register Number" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <label>How would you rate your overall experience at the college?</label>
+                        <textarea name="college-experience" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <label>What suggestions do you have for improvement?</label>
+                        <textarea name="improvement-suggestions" rows="2" placeholder="Your response..." required></textarea>
+            
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
+            
+
+           
+
+            <section id="history" class="content">
+                <h2>Feedback History</h2>
+                <ul id="feedback-list">
+                    <!-- Feedback will be dynamically inserted here -->
+                </ul>
+            </section>
+            
+            <section id="view-feedback" class="content" style="display: none;">
+                <h2>Feedback Details</h2>
+                <div id="feedback-details"></div>
+            </section>
+            
+
+            <section id="logout" class="content">
+                <h2>Logout</h2>
+                <p>You have been logged out successfully.</p>
+            </section>
+        </main>
+    </div>
+    <script src="../JS/student_dashboard_script.js"></script>
+ 
+</body>
+</html>
