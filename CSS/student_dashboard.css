@@ -191,3 +191,27 @@ button:hover {
         font-size: 14px; /* Adjust input/button font size */
     }
 }
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-family: Arial, sans-serif; /* Adjust font family as needed */
+}
+
+.feedback-table th {
+    background-color: #f2f2f2;
+    text-align: left; /* Aligns the header text to the left */
+    padding: 10px;
+}
+
+.feedback-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: middle; /* Centers the content vertically */
+    text-align: left; /* Aligns the text to the left */
+}
+
+.feedback-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

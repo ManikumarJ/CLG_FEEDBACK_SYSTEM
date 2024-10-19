@@ -125,28 +125,87 @@ function viewFeedback(index, type) {
     if (type === 'faculty') {
         feedback = feedbackHistory[index];
         feedbackDetails.innerHTML = `
-            <p><strong>This is faculty feedback</strong></p>
-            <p><strong>Name:</strong> ${feedback.name}</p>
-            <p><strong>Register Number:</strong> ${feedback.registerNumber}</p>
-            <p><strong>Email:</strong> ${feedback.email}</p>
-            <p><strong>Faculty:</strong> ${feedback.faculty}</p>
-            <p><strong>Teaching Style:</strong> ${feedback.teachingStyle}</p>
-            <p><strong>Clarity:</strong> ${feedback.clarity}</p>
-            <p><strong>Accessibility:</strong> ${feedback.accessibility}</p>
-            <p><strong>Feedback Helpfulness:</strong> ${feedback.feedbackHelpfulness}</p>
-            <p><strong>Participation:</strong> ${feedback.participation}</p>
+            <table class="feedback-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Faculty Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Name:</strong></td>
+                        <td>${feedback.name}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Register Number:</strong></td>
+                        <td>${feedback.registerNumber}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>${feedback.email}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Faculty:</strong></td>
+                        <td>${feedback.faculty}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Teaching Style:</strong></td>
+                        <td>${feedback.teachingStyle}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clarity:</strong></td>
+                        <td>${feedback.clarity}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accessibility:</strong></td>
+                        <td>${feedback.accessibility}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Feedback Helpfulness:</strong></td>
+                        <td>${feedback.feedbackHelpfulness}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Participation:</strong></td>
+                        <td>${feedback.participation}</td>
+                    </tr>
+                </tbody>
+            </table>
         `;
     } else if (type === 'college') {
         feedback = collegeFeedbackHistory[index];
         feedbackDetails.innerHTML = `
-            <p><strong>This is college feedback</strong></p>
-            <p><strong>Name:</strong> ${feedback.name}</p>
-            <p><strong>Register Number:</strong> ${feedback.registerNumber}</p>
-            <p><strong>Email:</strong> ${feedback.email}</p>
-            <p><strong>College Experience:</strong> ${feedback.collegeExperience}</p>
-            <p><strong>Improvement Suggestions:</strong> ${feedback.improvementSuggestions}</p>
+            <table class="feedback-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">College Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Name:</strong></td>
+                        <td>${feedback.name}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Register Number:</strong></td>
+                        <td>${feedback.registerNumber}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>${feedback.email}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>College Experience:</strong></td>
+                        <td>${feedback.collegeExperience}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Improvement Suggestions:</strong></td>
+                        <td>${feedback.improvementSuggestions}</td>
+                    </tr>
+                </tbody>
+            </table>
         `;
     }
+    
 
     // Add a cancel button
     feedbackDetails.innerHTML += `<button onclick="cancelView()">Cancel</button>`;
